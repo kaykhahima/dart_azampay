@@ -3,7 +3,7 @@ part of '../../models.dart';
 /// CallbackRequest
 class CallbackRequest extends Model {
   /// Additional data that calling application can provide. This is optional
-  final AdditionalProperties? additionalProperties;
+  final Map<String, dynamic>? additionalProperties;
 
   /// Amount to be deducted from the consumer account
   final String amount;
@@ -47,9 +47,7 @@ class CallbackRequest extends Model {
 
   factory CallbackRequest.fromMap(Map<String, dynamic> map) {
     return CallbackRequest(
-      additionalProperties: map['additionalProperties'] != null
-          ? AdditionalProperties.fromMap(map['additionalProperties'])
-          : null,
+      additionalProperties: map['additionalProperties'],
       amount: map['amount'],
       fspReferenceId: map['fspReferenceId'],
       message: map['message'],
@@ -65,7 +63,7 @@ class CallbackRequest extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
-      'additionalProperties': additionalProperties?.toMap(),
+      'additionalProperties': additionalProperties,
       'amount': amount,
       'fspReferenceId': fspReferenceId,
       'message': message,

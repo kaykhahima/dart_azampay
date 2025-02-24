@@ -14,7 +14,7 @@ void main() async {
   // Create a MNOCheckoutRequest
   final mnoRequest = MnoCheckoutRequest(
     accountNumber: '255764XXXXXX',
-    additionalProperties: AdditionalProperties(data: {}), //optional
+    additionalProperties: {}, //optional
     amount: '1000',
     currency: 'TZS', // only supported currency at the moment
     externalId: 'external_id',
@@ -23,7 +23,7 @@ void main() async {
 
   // Example usage of the checkout service
   final res = await checkoutService.mnoPayment(request: mnoRequest);
+  print(res.data);
 }
 
-// TODO: 1 - set additional properties to be map
 // TODO: 2 - use secure storage for storing token?

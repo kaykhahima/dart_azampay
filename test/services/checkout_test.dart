@@ -1,5 +1,4 @@
 import 'package:dart_azampay/dart_azampay.dart';
-import 'package:dart_azampay/models.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -20,7 +19,7 @@ void main() {
     test('mno', () async {
       final request = MnoCheckoutRequest(
         accountNumber: '255764XXXXXX',
-        additionalProperties: AdditionalProperties(data: {}),
+        additionalProperties: {},
         amount: '1000',
         currency: 'TZS',
         externalId: 'external-id',
@@ -49,7 +48,7 @@ void main() {
     test('bad request', () async {
       final request = MnoCheckoutRequest(
         accountNumber: '255764XXXXXX',
-        additionalProperties: AdditionalProperties(data: {}),
+        additionalProperties: {},
         amount: '1000',
         currency: 'TZS',
         externalId: 'external-id',
@@ -82,7 +81,7 @@ void main() {
 
     test('bank payment', () async {
       final request = BankCheckoutRequest(
-        additionalProperties: AdditionalProperties(data: {}),
+        additionalProperties: {},
         amount: '1000',
         merchantAccountNumber: '0152XXXXXX',
         merchantMobileNumber: '255764XXXXXX',

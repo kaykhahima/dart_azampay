@@ -7,7 +7,7 @@ void main() {
     test('model', () {
       final mnoRequest = MnoCheckoutRequest(
         accountNumber: '255764XXXXXX',
-        additionalProperties: AdditionalProperties(data: {'prop1': 'value1'}),
+        additionalProperties: {'prop1': 'value1'},
         amount: '1000',
         currency: 'TZS',
         externalId: 'external-id',
@@ -19,9 +19,7 @@ void main() {
       final result = MnoCheckoutRequest.fromMap(map);
 
       expect(result.accountNumber, '255764XXXXXX');
-      expect(result.additionalProperties?.data, {
-        'data': {'prop1': 'value1'}
-      });
+      expect(result.additionalProperties, {'prop1': 'value1'});
       expect(result.amount, '1000');
       expect(result.currency, 'TZS');
       expect(result.externalId, 'external-id');

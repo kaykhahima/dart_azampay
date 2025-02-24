@@ -3,7 +3,7 @@ part of '../../models.dart';
 /// BankCheckoutRequest
 class BankCheckoutRequest extends Model {
   /// Additional data that calling application can provide. This is optional
-  final AdditionalProperties? additionalProperties;
+  final Map<String, dynamic>? additionalProperties;
 
   /// Amount to be deducted from the consumer account
   final String amount;
@@ -52,9 +52,7 @@ class BankCheckoutRequest extends Model {
           BankProvider.values.firstWhere((e) => e.name == map['provider']),
       otp: map['otp'],
       referenceId: map['referenceId'],
-      additionalProperties: map['additionalProperties'] != null
-          ? AdditionalProperties.fromMap(map['additionalProperties'])
-          : null,
+      additionalProperties: map['additionalProperties'],
     );
   }
 
@@ -69,7 +67,7 @@ class BankCheckoutRequest extends Model {
       'provider': provider,
       'otp': otp,
       'referenceId': referenceId,
-      'additionalProperties': additionalProperties?.toMap(),
+      'additionalProperties': additionalProperties,
     };
   }
 }

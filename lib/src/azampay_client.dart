@@ -87,7 +87,7 @@ class AzamPayClient extends Client {
       print('token: $_token');
       print('expires: $_expiresAt');
     } else {
-      throw Exception('Failed to generate token');
+      throw Exception('Failed to generate token: ${response.body}');
     }
   }
 

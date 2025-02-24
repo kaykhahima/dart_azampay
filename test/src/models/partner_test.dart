@@ -1,5 +1,4 @@
 import 'package:dart_azampay/dart_azampay.dart';
-import 'package:dart_azampay/models.dart';
 import 'package:test/test.dart';
 
 void main() {
