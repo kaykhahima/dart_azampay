@@ -1,10 +1,9 @@
 # AzamPay Dart Package
-___
+
 
 Dart AzamPay is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, post checkouts, disbursements, and pay bills.
 
 ## Features
-___
 
 - Mobile payments
 - Bank payments
@@ -13,7 +12,6 @@ ___
 - Pay bills
 
 ## Installation
-___
 
 To use AzamPay, you need to add it to your pubspec.yaml file:
 
@@ -25,7 +23,6 @@ dependencies:
 Then, run `flutter pub get` to install the package.
 
 ## Getting Started
-___
 
 ### Initialize and make requests
 
@@ -64,7 +61,6 @@ print(res.data); // prints out the response data
 ```
 
 ### Services
-___
 
 This package allows you to use services based on your usage. This helps you to use only the service you need. For instance, you can only use the checkout service or the bill payment service. 
 
@@ -100,12 +96,10 @@ await partnersService.postCheckout(request: postCheckoutRequest);
 ```
 
 ## Contributing
-___
 
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
 
 ## License
-___
 
 This project is licensed under the BSD 3-Clause License. See the [LICENSE](LICENSE) file for details.
 
