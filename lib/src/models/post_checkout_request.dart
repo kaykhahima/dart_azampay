@@ -89,6 +89,7 @@ class PostCheckoutRequest extends Model {
   }
 }
 
+/// The [Cart] class represents a shopping cart containing items.
 class Cart extends Model {
   final List<Map<String, dynamic>> items;
 

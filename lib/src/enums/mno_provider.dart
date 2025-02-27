@@ -1,5 +1,6 @@
 part of '../../enums.dart';
 
+/// Mobile Network Operator Providers
 enum MnoProvider {
   airtelMoney,
   azamPesa,

@@ -1,6 +1,6 @@
 part of '../../enums.dart';
 
-/// HTTP methods.
+/// HTTP methods
 enum HttpMethod { get, post, put, delete, patch }
 
 extension HttpMethodString on HttpMethod {

@@ -68,9 +68,7 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">factory CallbackRequest.fromMap(Map&lt;String, dynamic&gt; map) {
   return CallbackRequest(
-    additionalProperties: map[&#39;additionalProperties&#39;] != null
-        ? AdditionalProperties.fromMap(map[&#39;additionalProperties&#39;])
-        : null,
+    additionalProperties: map[&#39;additionalProperties&#39;],
     amount: map[&#39;amount&#39;],
     fspReferenceId: map[&#39;fspReferenceId&#39;],
     message: map[&#39;message&#39;],

@@ -69,9 +69,7 @@
   <pre class="language-dart"><code class="language-dart">factory MnoCheckoutRequest.fromMap(Map&lt;String, dynamic&gt; map) {
   return MnoCheckoutRequest(
     accountNumber: map[&#39;accountNumber&#39;],
-    additionalProperties: map[&#39;additionalProperties&#39;] != null
-        ? AdditionalProperties.fromMap(map[&#39;additionalProperties&#39;])
-        : null,
+    additionalProperties: map[&#39;additionalProperties&#39;],
     amount: map[&#39;amount&#39;],
     currency: map[&#39;currency&#39;],
     externalId: map[&#39;externalId&#39;],

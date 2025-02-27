@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-/// Appwrite Response
+/// API Response
 class Response<T> {
   /// Initializes a [Response]
   Response({this.data});

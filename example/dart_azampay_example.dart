@@ -2,10 +2,10 @@ import 'package:dart_azampay/dart_azampay.dart';
 
 void main() async {
   final azamPayClient = AzamPayClient(
-    appName: 'your_app_name',
-    clientId: 'your_client_id',
-    clientSecret: 'your_client_secret',
-    sandbox: true, // Set to false for production
+    appName: 'My-App',
+    clientId: '4a4c16d1-52cc-48eddf23-bfff',
+    clientSecret: 'BR2USg29BIubf...vU5ErDtc=',
+    sandbox: true, // set to false for production
   );
 
   // Create an instance of the Checkout service
@@ -18,12 +18,10 @@ void main() async {
     amount: '1000',
     currency: 'TZS', // only supported currency at the moment
     externalId: 'external_id',
-    provider: MnoProvider.mixxByYas, // or any other provider
+    provider: MnoProvider.mpesa, // or any other provider
   );
 
   // Example usage of the checkout service
   final res = await checkoutService.mnoPayment(request: mnoRequest);
-  print(res.data);
+  print(res.data); // prints out the response data
 }
-
-// TODO: 2 - use secure storage for storing token?

@@ -1,5 +1,6 @@
 part of '../../enums.dart';
 
+/// Bank Providers
 enum BankProvider {
   crdb,
   nmb,
