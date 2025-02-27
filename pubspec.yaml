@@ -1,5 +1,5 @@
 name: dart_azampay
-description: Dart AzamPay is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, post checkouts, disbursements, and pay bills.
+description: A simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications.
 version: 0.0.1
 repository: https://github.com/kaykhahima/dart_azampay
 
