@@ -1,4 +1,4 @@
-import 'package:dart_azampay/src/models/post_checkout_request.dart';
+import 'package:dart_azampay/dart_azampay.dart';
 import 'package:test/test.dart';
 
 void main() {

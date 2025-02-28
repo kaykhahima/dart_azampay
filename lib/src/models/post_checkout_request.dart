@@ -1,4 +1,4 @@
-import 'package:dart_azampay/dart_azampay.dart';
+part of '../../models.dart';
 
 /// The [PostCheckoutRequest] class represents a request to initiate a checkout process.
 class PostCheckoutRequest extends Model {
