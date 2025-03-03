@@ -1,4 +1,7 @@
-## 0.0.2
+## 0.0.3
 
-- Updated README.md
-- Updated package description
+- updated README.md
+- updated example
+- fix: decoding plain string response to json
+- fix: set base url for each service
+- wip: disbursement service
