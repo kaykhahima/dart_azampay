@@ -1,36 +1,38 @@
 # AzamPay Dart Package
 
-
-Dart AzamPay is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, post checkouts, disbursements, and pay bills.
+```dart_azampay``` is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, request payment link, disbursements, and pay bills.
 
 ## Features
 
 - Mobile payments
 - Bank payments
-- Send checkout pages
+- Get payment partners
+- Request payment link
 - Disbursements
 - Pay bills
 
 ## Installation
 
-To use AzamPay, you need to add it to your pubspec.yaml file:
+Add `dart_azampay` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   dart_azampay: latest_version
 ```
 
-Then, run `flutter pub get` to install the package.
+Run `dart pub get` to install the package, or, install it directly from the command line:
+
+```yaml
+dart pub add dart_azampay
+```
 
 ## Getting Started
 
 ### Initialize and make requests
 
-After adding the package to your project, initialize it with your App name, client ID and secret key. You can find these information on your AzamPay portal.
+Initialize the package with your app name, client ID, and secret key. You can find these details on your AzamPay portal. If you haven't registered yet,  you can do so [here](https://developers.azampay.co.tz/). Register, verify your account, create an app and get your credentials.
 
-If you have not registered yet, you can do so [here](https://developers.azampay.co.tz/). Register, verify your account, create an app and get your credentials.
-
-To checkout and make payment with MNO, is as easy as follows:
+#### Example: Mobile Payment Checkout
 
 ```dart
 // initialize the AzamPay client
@@ -56,13 +58,12 @@ final mnoRequest = MnoCheckoutRequest(
 
 // Example usage of the checkout service
 final res = await checkoutService.mnoPayment(request: mnoRequest);
-print(res.data); // prints out the response data
-
+print('mno checkout response: ${res.data}');
 ```
 
 ### Services
 
-This package allows you to use services based on your usage. This helps you to use only the service you need. For instance, you can only use the checkout service or the bill payment service. 
+This package allows you to use services based on your needs. For instance, you can use only the checkout service or the bill payment service.
 
 ### Supported services
 
@@ -74,26 +75,32 @@ final checkoutService = Checkout(azamPayClient);
 
 // mobile payment checkout
 final res = await checkoutService.mnoPayment(request: mnoRequest);
-print(res.data); // prints out the response data
+print('mno checkout response: ${res.data}');
 
 // bank payment checkout
 final res = await checkoutService.bankPayment(request: bankRequest);
-print(res.data); // prints out the response data
+print('bank checkout response: ${res.data}');
 ```
 
 **2. Partners service**
 
 ```dart
-// instance of the partners service
+// Instance of the partners service
 final partnersService = Partners(azamPayClient);
 
-// returns the list of registered partners
+// Get payment partners
 final partners = await partnersService.getPaymentPartners();
-print(partners) // prints out the retrieved list of partners
+print('Partners list: $partners'); // Prints the list of partners
 
-// send a checkout request to the provided partner
-await partnersService.postCheckout(request: postCheckoutRequest);
+// Request payment link
+final res = await partnersService.requestPaymentLink(postCheckoutRequest);
+print('Payment link: ${res.data}'); // Prints the payment link
 ```
+
+## Related packages
+- [Neurotech-HQ/azampay](https://github.com/Neurotech-HQ/azampay): Python Wrapper to Azampay Payment Gateway
+- [flexcodelabs/azampay](https://github.com/flexcodelabs/azampay): NodeJs SDK to help you easily and seamlessly integrate with Azampay APIs
+
 
 ## Contributing
 

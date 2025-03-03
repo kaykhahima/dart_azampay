@@ -13,6 +13,9 @@ void main() {
 
     setUp(() {
       client = MockClient();
+      when(client.sandbox).thenReturn(true);
+      when(client.clientId).thenReturn('client-id');
+      when(client.appName).thenReturn('app-name');
       partners = Partners(client);
     });
 
@@ -50,7 +53,7 @@ void main() {
 
       when(client.call(
         HttpMethod.get,
-        path: '/api/v1/Partner/GetPaymentPartners',
+        path: 'https://sandbox.azampay.co.tz/api/v1/Partner/GetPaymentPartners',
         headers: {},
         params: {},
       )).thenAnswer((_) async => Response(data: data));
@@ -65,8 +68,6 @@ void main() {
         amount: '1000',
         currency: 'TZS',
         externalId: 'external-id',
-        clientId: 'client-id',
-        appName: 'app-name',
         language: 'en',
         cart: Cart(items: []),
         redirectFailURL: 'https://example.com/fail',
@@ -76,14 +77,20 @@ void main() {
         vendorName: 'vendor-name',
       );
 
+      final params = {
+        'clientId': 'client-id',
+        'appName': 'app-name',
+        ...request.toMap(),
+      };
+
       when(client.call(
         HttpMethod.post,
-        path: '/api/v1/Partner/PostCheckout',
+        path: 'https://sandbox.azampay.co.tz/api/v1/Partner/PostCheckout',
         headers: {},
-        params: request.toMap(),
+        params: params,
       )).thenAnswer((_) async => Response(data: {}));
 
-      final res = await partners.postCheckout(request);
+      final res = await partners.requestPaymentLink(request);
       expect(res, isA<Response>());
     });
   });

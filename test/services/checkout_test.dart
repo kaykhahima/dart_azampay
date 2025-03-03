@@ -13,6 +13,7 @@ void main() {
 
     setUp(() {
       client = MockClient();
+      when(client.sandbox).thenReturn(true);
       checkout = Checkout(client);
     });
 
@@ -35,7 +36,7 @@ void main() {
 
       when(client.call(
         HttpMethod.post,
-        path: '/azampay/mno/checkout',
+        path: 'https://sandbox.azampay.co.tz/azampay/mno/checkout',
         headers: {},
         params: request.toMap(),
       )).thenAnswer((_) async => Response(data: data));
@@ -69,7 +70,7 @@ void main() {
 
       when(client.call(
         HttpMethod.post,
-        path: '/azampay/mno/checkout',
+        path: 'https://sandbox.azampay.co.tz/azampay/mno/checkout',
         headers: {},
         params: request.toMap(),
       )).thenAnswer((_) async => Response(data: data));
@@ -100,7 +101,7 @@ void main() {
 
       when(client.call(
         HttpMethod.post,
-        path: '/azampay/bank/checkout',
+        path: 'https://sandbox.azampay.co.tz/azampay/bank/checkout',
         headers: {},
         params: request.toMap(),
       )).thenAnswer((_) async => Response(data: data));

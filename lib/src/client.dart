@@ -12,7 +12,7 @@ abstract class Client {
   final String clientSecret;
 
   /// Whether to use the sandbox environment or not
-  final bool? sandbox;
+  final bool sandbox;
 
   /// Constructor for the Client class.
   /// Requires [appName], [clientId],  and [clientSecret].

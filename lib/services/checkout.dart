@@ -2,7 +2,13 @@ part of '../../dart_azampay.dart';
 
 /// The Checkout service provides methods for processing payments through mobile networks and banks.
 class Checkout extends Service {
-  Checkout(super.client);
+  late String _baseUrl;
+
+  Checkout(super.client) {
+    _baseUrl = client.sandbox
+        ? 'https://sandbox.azampay.co.tz'
+        : 'https://checkout.azampay.co.tz';
+  }
 
   /// Checkout and make payment through a mobile network operator
   ///
@@ -20,7 +26,7 @@ class Checkout extends Service {
 
     return await client.call(
       HttpMethod.post,
-      path: apiPath,
+      path: _baseUrl + apiPath,
       params: apiParams,
       headers: apiHeaders,
     );
@@ -35,7 +41,7 @@ class Checkout extends Service {
 
     return await client.call(
       HttpMethod.post,
-      path: apiPath,
+      path: _baseUrl + apiPath,
       params: apiParams,
       headers: apiHeaders,
     );
@@ -50,7 +56,7 @@ class Checkout extends Service {
 
     return await client.call(
       HttpMethod.post,
-      path: apiPath,
+      path: _baseUrl + apiPath,
       params: apiParams,
       headers: apiHeaders,
     );

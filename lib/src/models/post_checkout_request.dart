@@ -2,12 +2,6 @@ part of '../../models.dart';
 
 /// The [PostCheckoutRequest] class represents a request to initiate a checkout process.
 class PostCheckoutRequest extends Model {
-  /// Unique ID for the client.
-  final String clientId;
-
-  /// Name of the application.
-  final String appName;
-
   /// Amount that will be charged from the given account.
   final String amount;
 
@@ -39,8 +33,6 @@ class PostCheckoutRequest extends Model {
   final String vendorName;
 
   PostCheckoutRequest({
-    required this.clientId,
-    required this.appName,
     required this.amount,
     required this.currency,
     required this.language,
@@ -55,8 +47,6 @@ class PostCheckoutRequest extends Model {
 
   factory PostCheckoutRequest.fromMap(Map<String, dynamic> map) {
     return PostCheckoutRequest(
-      clientId: map['clientId'].toString(),
-      appName: map['appName'].toString(),
       amount: map['amount'].toString(),
       currency: map['currency'].toString(),
       language: map['language'].toString(),
@@ -73,8 +63,6 @@ class PostCheckoutRequest extends Model {
   @override
   Map<String, dynamic> toMap() {
     return {
-      'clientId': clientId,
-      'appName': appName,
       'amount': amount,
       'currency': currency,
       'language': language,

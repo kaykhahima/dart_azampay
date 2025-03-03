@@ -52,8 +52,6 @@ void main() {
         amount: '1000',
         currency: 'TZS',
         externalId: 'external-id',
-        clientId: 'client-id',
-        appName: 'app-name',
         language: 'en',
         cart: Cart(items: items),
         redirectFailURL: 'https://example.com/fail',

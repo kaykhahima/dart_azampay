@@ -1,6 +1,6 @@
 import 'client.dart';
 
-class Service {
+abstract class Service {
   final Client client;
 
   const Service(this.client);

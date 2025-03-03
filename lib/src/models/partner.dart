@@ -71,6 +71,11 @@ class Partner extends Model {
   }
 
   @override
+  String toString() {
+    return jsonEncode(toMap());
+  }
+
+  @override
   Map<String, dynamic> toMap() {
     return {
       'id': id,

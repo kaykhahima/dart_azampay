@@ -10,7 +10,6 @@ import '../models.dart';
 
 class AzamPayClient extends Client {
   late String _authEndpoint;
-  late String _checkoutEndpoint;
   late Map<String, String> _headers;
   late http.Client _httpClient;
   String? _token;
@@ -22,14 +21,10 @@ class AzamPayClient extends Client {
     required super.clientSecret,
     super.sandbox,
   }) : super() {
-    print('AzamPayClient initialized');
     _httpClient = http.Client();
-    _authEndpoint = sandbox == true
+    _authEndpoint = sandbox
         ? 'https://authenticator-sandbox.azampay.co.tz'
         : 'https://authenticator.azampay.co.tz';
-    _checkoutEndpoint = sandbox == true
-        ? 'https://sandbox.azampay.co.tz'
-        : 'https://checkout.azampay.co.tz';
     _headers = {'Content-Type': 'application/json'};
   }
 
@@ -44,7 +39,7 @@ class AzamPayClient extends Client {
 
     http.BaseRequest request = prepareRequest(
       method,
-      uri: Uri.parse(_checkoutEndpoint + path),
+      uri: Uri.parse(path),
       headers: {..._headers, ...headers},
       params: params,
     );
@@ -84,8 +79,6 @@ class AzamPayClient extends Client {
       final decoded = jsonDecode(response.body);
       _expiresAt = decoded['data']['expires'];
       _headers['Authorization'] = 'Bearer ${decoded['data']['accessToken']}';
-      print('token: $_token');
-      print('expires: $_expiresAt');
     } else {
       throw Exception('Failed to generate token: ${response.body}');
     }
@@ -126,7 +119,6 @@ class AzamPayClient extends Client {
       );
       request = http.Request(method.name(), uri);
     } else {
-      print(params.toString());
       (request as http.Request).body = jsonEncode(params);
     }
 
@@ -136,6 +128,12 @@ class AzamPayClient extends Client {
 
   toResponse(http.StreamedResponse streamedResponse) async {
     final responseBody = await streamedResponse.stream.bytesToString();
-    return Response(data: jsonDecode(responseBody));
+    late dynamic data;
+    try {
+      data = jsonDecode(responseBody);
+    } catch (e) {
+      data = responseBody;
+    }
+    return Response(data: data);
   }
 }

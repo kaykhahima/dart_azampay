@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'enums.dart';
 
 part 'src/models/bank_checkout_request.dart';
