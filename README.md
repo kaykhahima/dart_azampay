@@ -4,7 +4,7 @@
 ![pub package](https://img.shields.io/pub/v/dart_azampay?style=flat&color=blue) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml)
 
 <p align="left">
-<img src="doc/images/azampay-strata.png" height="180" title="Azampay Strata Logo" alt="Azampay Strata Logo">
+    <img src="https://github.com/kaykhahima/dart_azampay/raw/main/doc/images/azampay-strata.png" height="180" title="Azampay Strata Logo" alt="Azampay Strata Logo">
 </p>
 
 

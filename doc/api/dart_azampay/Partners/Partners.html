@@ -27,7 +27,7 @@
     <li><a href="../../index.html">dart_azampay</a></li>
     <li><a href="../../dart_azampay/dart_azampay-library.html">dart_azampay.dart</a></li>
     <li><a href="../../dart_azampay/Partners-class.html">Partners</a></li>
-    <li class="self-crumb">Partners const constructor</li>
+    <li class="self-crumb">Partners constructor</li>
   </ol>
   <div class="self-name">Partners</div>
   <form class="search navbar-right" role="search">
@@ -56,7 +56,7 @@
 </h1></div>
 
     <section class="multi-line-signature">
-      const
+      
       <span class="name ">Partners</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="-param-client"><span class="type-annotation"><a href="../../dart_azampay/Client-class.html">Client</a></span> <span class="parameter-name">client</span></span></li>
 </ol>)
     </section>
@@ -66,7 +66,11 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const Partners(super.client);</code></pre>
+  <pre class="language-dart"><code class="language-dart">Partners(super.client) {
+  _baseUrl = client.sandbox
+      ? &#39;https:&#47;&#47;sandbox.azampay.co.tz&#39;
+      : &#39;https:&#47;&#47;checkout.azampay.co.tz&#39;;
+}</code></pre>
 </section>
 
 
@@ -82,7 +86,7 @@
     <li><a href="../../index.html">dart_azampay</a></li>
     <li><a href="../../dart_azampay/dart_azampay-library.html">dart_azampay</a></li>
     <li><a href="../../dart_azampay/Partners-class.html">Partners</a></li>
-    <li class="self-crumb">Partners const constructor</li>
+    <li class="self-crumb">Partners constructor</li>
 </ol>
 
     <h5>Partners class</h5>
@@ -94,7 +98,7 @@
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

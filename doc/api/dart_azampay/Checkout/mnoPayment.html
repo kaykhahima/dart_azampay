@@ -86,7 +86,7 @@ through the callback endpoint you provided upon registering your application.</p
 
   return await client.call(
     HttpMethod.post,
-    path: apiPath,
+    path: _baseUrl + apiPath,
     params: apiParams,
     headers: apiHeaders,
   );
@@ -118,7 +118,7 @@ through the callback endpoint you provided upon registering your application.</p
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

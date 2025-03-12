@@ -1,6 +1,6 @@
 part of '../../models.dart';
 
-/// The [PostCheckoutRequest] class represents a request to initiate a checkout process.
+/// PostCheckoutRequest
 class PostCheckoutRequest extends Model {
   /// Amount that will be charged from the given account.
   final String amount;

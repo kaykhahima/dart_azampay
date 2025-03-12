@@ -79,7 +79,7 @@
 
   final res = await client.call(
     HttpMethod.get,
-    path: apiPath,
+    path: _baseUrl + apiPath,
     params: apiParams,
     headers: apiHeaders,
   );
@@ -113,7 +113,7 @@
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

@@ -72,7 +72,13 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">toResponse(http.StreamedResponse streamedResponse) async {
   final responseBody = await streamedResponse.stream.bytesToString();
-  return Response(data: jsonDecode(responseBody));
+  late dynamic data;
+  try {
+    data = jsonDecode(responseBody);
+  } catch (e) {
+    data = responseBody;
+  }
+  return Response(data: data);
 }</code></pre>
 </section>
 
@@ -101,7 +107,7 @@
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

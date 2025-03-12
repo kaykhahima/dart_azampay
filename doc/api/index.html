@@ -47,30 +47,32 @@
       
 <section class="desc markdown">
   <h1 id="azampay-dart-package">AzamPay Dart Package</h1>
-<hr>
-<p>Dart AzamPay is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, post checkouts, disbursements, and pay bills.</p>
+<p><img src="https://img.shields.io/pub/v/dart_azampay?style=flat&amp;color=blue" alt="pub package"> <img src="https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml" alt="GitHub Actions Workflow Status"></p>
+<p align="left">
+<img src="https://github.com/kaykhahima/dart_azampay/raw/main/doc/images/azampay-strata.png" height="180" title="Azampay Strata Logo" alt="Azampay Strata Logo">
+</p>
+<p><code>dart_azampay</code> is a Dart package that provides a simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications. With Azampay, you can easily make mobile and bank payments, request payment link, disbursements, and pay bills.</p>
 <h2 id="features">Features</h2>
-<hr>
 <ul>
 <li>Mobile payments</li>
 <li>Bank payments</li>
-<li>Send checkout pages</li>
+<li>Get payment partners</li>
+<li>Request payment link</li>
 <li>Disbursements</li>
 <li>Pay bills</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<hr>
-<p>To use AzamPay, you need to add it to your pubspec.yaml file:</p>
+<p>Add <code>dart_azampay</code> to your <code>pubspec.yaml</code> file:</p>
 <pre class="language-yaml"><code class="language-yaml">dependencies:
   dart_azampay: latest_version
 </code></pre>
-<p>Then, run <code>flutter pub get</code> to install the package.</p>
+<p>Run <code>dart pub get</code> to install the package, or, install it directly from the command line:</p>
+<pre class="language-yaml"><code class="language-yaml">dart pub add dart_azampay
+</code></pre>
 <h2 id="getting-started">Getting Started</h2>
-<hr>
 <h3 id="initialize-and-make-requests">Initialize and make requests</h3>
-<p>After adding the package to your project, initialize it with your App name, client ID and secret key. You can find these information on your AzamPay portal.</p>
-<p>If you have not registered yet, you can do so <a href="https://developers.azampay.co.tz/">here</a>. Register, verify your account, create an app and get your credentials.</p>
-<p>To checkout and make payment with MNO, is as easy as follows:</p>
+<p>Initialize the package with your app name, client ID, and secret key. You can find these details on your AzamPay portal. If you haven't registered yet,  you can do so <a href="https://developers.azampay.co.tz/">here</a>. Register, verify your account, create an app and get your credentials.</p>
+<h4 id="example-mobile-payment-checkout">Example: Mobile Payment Checkout</h4>
 <pre class="language-dart"><code class="language-dart">// initialize the AzamPay client
 final azamPayClient = AzamPayClient(
    appName: 'My-App',
@@ -94,12 +96,10 @@ final mnoRequest = MnoCheckoutRequest(
 
 // Example usage of the checkout service
 final res = await checkoutService.mnoPayment(request: mnoRequest);
-print(res.data); // prints out the response data
-
+print('mno checkout response: ${res.data}');
 </code></pre>
 <h3 id="services">Services</h3>
-<hr>
-<p>This package allows you to use services based on your usage. This helps you to use only the service you need. For instance, you can only use the checkout service or the bill payment service.</p>
+<p>This package allows you to use services based on your needs. For instance, you can use only the checkout service or the bill payment service.</p>
 <h3 id="supported-services">Supported services</h3>
 <p><strong>1. Checkout service</strong></p>
 <pre class="language-dart"><code class="language-dart">// instance of the checkout service
@@ -107,28 +107,33 @@ final checkoutService = Checkout(azamPayClient);
 
 // mobile payment checkout
 final res = await checkoutService.mnoPayment(request: mnoRequest);
-print(res.data); // prints out the response data
+print('mno checkout response: ${res.data}');
 
 // bank payment checkout
 final res = await checkoutService.bankPayment(request: bankRequest);
-print(res.data); // prints out the response data
+print('bank checkout response: ${res.data}');
 </code></pre>
 <p><strong>2. Partners service</strong></p>
-<pre class="language-dart"><code class="language-dart">// instance of the partners service
+<pre class="language-dart"><code class="language-dart">// Instance of the partners service
 final partnersService = Partners(azamPayClient);
 
-// returns the list of registered partners
+// Get payment partners
 final partners = await partnersService.getPaymentPartners();
-print(partners) // prints out the retrieved list of partners
+print('Partners list: $partners'); // Prints the list of partners
 
-// send a checkout request to the provided partner
-await partnersService.postCheckout(request: postCheckoutRequest);
+// Request payment link
+final res = await partnersService.requestPaymentLink(postCheckoutRequest);
+print('Payment link: ${res.data}'); // Prints the payment link
 </code></pre>
+<h2 id="related-packages">Related packages</h2>
+<ul>
+<li><a href="https://github.com/Neurotech-HQ/azampay">Neurotech-HQ/azampay</a>: Python Wrapper to Azampay Payment Gateway</li>
+<li><a href="https://github.com/flexcodelabs/azampay">flexcodelabs/azampay</a>: NodeJs SDK to help you easily and seamlessly integrate with Azampay APIs</li>
+<li><a href="https://github.com/alphaolomi/laravel-azampay">alphaolomi/laravel-azampay</a>: Laravel package providing fluent interface to Azampay's payment services</li>
+</ul>
 <h2 id="contributing">Contributing</h2>
-<hr>
 <p>Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.</p>
 <h2 id="license">License</h2>
-<hr>
 <p>This project is licensed under the BSD 3-Clause License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
 </section>
 
@@ -186,7 +191,7 @@ await partnersService.postCheckout(request: postCheckoutRequest);
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

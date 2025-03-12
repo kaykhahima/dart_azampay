@@ -88,11 +88,21 @@ Future&lt;Response&gt; call(
   Map&lt;String, String&gt; headers = const {},
   Map&lt;String, dynamic&gt; params = const {},
 }) async {
-  if (_token == null) await _generateToken();
+  final tokenRequest = GenerateTokenRequest(
+    appName: appName,
+    clientId: clientId,
+    clientSecret: clientSecret,
+  );
+
+  &#47;&#47; get a valid token (generates a new one or returns cached token)
+  final token = await _tokenManager.getToken(request: tokenRequest);
+
+  &#47;&#47; set the token in the headers
+  _headers[&#39;Authorization&#39;] = &#39;Bearer $token&#39;;
 
   http.BaseRequest request = prepareRequest(
     method,
-    uri: Uri.parse(_checkoutEndpoint + path),
+    uri: Uri.parse(path),
     headers: {..._headers, ...headers},
     params: params,
   );
@@ -132,7 +142,7 @@ Future&lt;Response&gt; call(
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>

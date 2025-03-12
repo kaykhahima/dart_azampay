@@ -1,6 +1,6 @@
 part of '../../models.dart';
 
-/// Model class for token response
+/// TokenResponse
 class TokenResponse extends Model {
   final String accessToken;
   final DateTime expire;

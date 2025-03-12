@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 
 import '../dart_azampay.dart';
 
+/// A class that manages the connection to the AzamPay API.
 class AzamPayClient extends Client {
   // Singleton instance
   static AzamPayClient? _instance;

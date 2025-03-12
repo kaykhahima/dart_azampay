@@ -108,7 +108,6 @@
     );
     request = http.Request(method.name(), uri);
   } else {
-    print(params.toString());
     (request as http.Request).body = jsonEncode(params);
   }
 
@@ -142,7 +141,7 @@
 <footer>
   <span class="no-break">
     dart_azampay
-      1.0.0
+      0.0.4
   </span>
   
 </footer>
