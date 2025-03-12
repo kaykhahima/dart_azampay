@@ -9,3 +9,4 @@ part 'src/models/mno_checkout_request.dart';
 part 'src/models/post_checkout_request.dart';
 part 'src/models/partner.dart';
 part 'src/models/model.dart';
+part 'src/models/token_response.dart';

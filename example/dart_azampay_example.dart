@@ -13,7 +13,7 @@ void main() async {
 
   // Create a MNOCheckoutRequest
   final mnoRequest = MnoCheckoutRequest(
-    accountNumber: '255688837005',
+    accountNumber: '255688XXXXXX',
     additionalProperties: {},
     amount: '1000',
     currency: 'TZS', // only supported currency at the moment

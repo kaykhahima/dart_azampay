@@ -1,31 +1,44 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 
-import 'package:dart_azampay/src/client.dart';
-import 'package:dart_azampay/src/response.dart';
-
-import '../enums.dart';
-import '../models.dart';
+import '../dart_azampay.dart';
 
 class AzamPayClient extends Client {
-  late String _authEndpoint;
+  // Singleton instance
+  static AzamPayClient? _instance;
+
   late Map<String, String> _headers;
   late http.Client _httpClient;
-  String? _token;
-  DateTime? _expiresAt;
+  late TokenManager _tokenManager;
 
-  AzamPayClient({
+  // Factory constructor to return the singleton instance
+  factory AzamPayClient({
+    required String appName,
+    required String clientId,
+    required String clientSecret,
+    bool? sandbox,
+  }) {
+    // If the instance doesn't exist, create it
+    _instance ??= AzamPayClient._internal(
+      appName: appName,
+      clientId: clientId,
+      clientSecret: clientSecret,
+      sandbox: sandbox ?? true,
+    );
+
+    return _instance!;
+  }
+
+  // Private constructor that will only be called once
+  AzamPayClient._internal({
     required super.appName,
     required super.clientId,
     required super.clientSecret,
     super.sandbox,
   }) : super() {
-    _httpClient = http.Client();
-    _authEndpoint = sandbox
-        ? 'https://authenticator-sandbox.azampay.co.tz'
-        : 'https://authenticator.azampay.co.tz';
     _headers = {'Content-Type': 'application/json'};
+    _httpClient = http.Client();
+    _tokenManager = TokenManager(this);
   }
 
   @override
@@ -35,7 +48,17 @@ class AzamPayClient extends Client {
     Map<String, String> headers = const {},
     Map<String, dynamic> params = const {},
   }) async {
-    if (_token == null) await _generateToken();
+    final tokenRequest = GenerateTokenRequest(
+      appName: appName,
+      clientId: clientId,
+      clientSecret: clientSecret,
+    );
+
+    // get a valid token (generates a new one or returns cached token)
+    final token = await _tokenManager.getToken(request: tokenRequest);
+
+    // set the token in the headers
+    _headers['Authorization'] = 'Bearer $token';
 
     http.BaseRequest request = prepareRequest(
       method,
@@ -50,37 +73,6 @@ class AzamPayClient extends Client {
     } catch (e, st) {
       print(st);
       throw Exception('Failed to make request: $e');
-    }
-  }
-
-  Future<void> _generateToken() async {
-    final path = '/AppRegistration/GenerateToken';
-
-    final request = GenerateTokenRequest(
-      appName: appName,
-      clientId: clientId,
-      clientSecret: clientSecret,
-    );
-
-    if (_expiresAt != null && _expiresAt!.isAfter(DateTime.now())) {
-      print('Token is still valid');
-      _headers['Authorization'] = 'Bearer $_token';
-      return;
-    }
-
-    final response = await _httpClient.post(
-      Uri.parse(_authEndpoint + path),
-      body: jsonEncode(request.toMap()),
-      headers: {..._headers},
-    );
-
-    if (response.statusCode == 200) {
-      //set token expiry time and add token to headers
-      final decoded = jsonDecode(response.body);
-      _expiresAt = decoded['data']['expires'];
-      _headers['Authorization'] = 'Bearer ${decoded['data']['accessToken']}';
-    } else {
-      throw Exception('Failed to generate token: ${response.body}');
     }
   }
 
