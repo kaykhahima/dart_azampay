@@ -1,7 +1,8 @@
 
 # AzamPay Dart Package
 
-![pub package](https://img.shields.io/pub/v/dart_azampay?style=flat&color=blue) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml)
+![pub package](https://img.shields.io/pub/v/dart_azampay?style=flat&color=blue) ![Pub Monthly Downloads](https://img.shields.io/pub/dm/dart_azampay?label=downloads) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml)
+
 
 <p align="left">
     <img src="https://github.com/kaykhahima/dart_azampay/raw/main/doc/images/azampay-strata.png" height="180" title="Azampay Strata Logo" alt="Azampay Strata Logo">
