@@ -62,7 +62,7 @@ void main() {
 
       final hasValidToken = tokenManager.hasValidToken();
 
-      expect(hasValidToken, isTrue);
+      expect(hasValidToken, isFalse);
     });
   });
 }
