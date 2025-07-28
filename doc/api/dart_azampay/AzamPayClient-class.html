@@ -25,24 +25,21 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">dart_azampay</a></li>
-    <li><a href="../dart_azampay/dart_azampay-library.html">dart_azampay.dart</a></li>
+    <li><a href="../dart_azampay/">dart_azampay.dart</a></li>
     <li class="self-crumb">AzamPayClient class</li>
   </ol>
   <div class="self-name">AzamPayClient</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
 <div
@@ -88,8 +85,8 @@
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
-        <dt id="AzamPayClient" class="callable">
-          <span class="name"><a href="../dart_azampay/AzamPayClient/AzamPayClient.html">AzamPayClient</a></span><span class="signature">({<span class="parameter" id="-param-appName"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">appName</span>, </span><span class="parameter" id="-param-clientId"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">clientId</span>, </span><span class="parameter" id="-param-clientSecret"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">clientSecret</span>, </span><span class="parameter" id="-param-sandbox"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">sandbox</span></span>})</span>
+        <dt id="AzamPayClient.new" class="callable">
+          <span class="name"><a href="../dart_azampay/AzamPayClient/AzamPayClient.html">AzamPayClient.new</a></span><span class="signature">({<span class="parameter" id="-param-appName"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">appName</span>, </span><span class="parameter" id="-param-clientId"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">clientId</span>, </span><span class="parameter" id="-param-clientSecret"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">clientSecret</span>, </span><span class="parameter" id="-param-sandbox"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">sandbox</span></span>})</span>
         </dt>
         <dd>
           
@@ -212,7 +209,7 @@
 
         <dt id="prepareRequest" class="callable">
   <span class="name"><a href="../dart_azampay/AzamPayClient/prepareRequest.html">prepareRequest</a></span><span class="signature">(<wbr><span class="parameter" id="prepareRequest-param-method"><span class="type-annotation"><a href="../enums/HttpMethod.html">HttpMethod</a></span> <span class="parameter-name">method</span>, {</span><span class="parameter" id="prepareRequest-param-uri"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a></span> <span class="parameter-name">uri</span>, </span><span class="parameter" id="prepareRequest-param-headers"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">headers</span>, </span><span class="parameter" id="prepareRequest-param-params"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">params</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/http/1.3.0/http/BaseRequest-class.html">BaseRequest</a></span>
+    <span class="returntype parameter">&#8594; <a href="https://pub.dev/documentation/http/1.4.0/http/BaseRequest-class.html">BaseRequest</a></span>
   </span>
   
 
@@ -224,7 +221,7 @@
 </dd>
 
         <dt id="toResponse" class="callable">
-  <span class="name"><a href="../dart_azampay/AzamPayClient/toResponse.html">toResponse</a></span><span class="signature">(<wbr><span class="parameter" id="toResponse-param-streamedResponse"><span class="type-annotation"><a href="https://pub.dev/documentation/http/1.3.0/http/StreamedResponse-class.html">StreamedResponse</a></span> <span class="parameter-name">streamedResponse</span></span>)
+  <span class="name"><a href="../dart_azampay/AzamPayClient/toResponse.html">toResponse</a></span><span class="signature">(<wbr><span class="parameter" id="toResponse-param-streamedResponse"><span class="type-annotation"><a href="https://pub.dev/documentation/http/1.4.0/http/StreamedResponse-class.html">StreamedResponse</a></span> <span class="parameter-name">streamedResponse</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
@@ -286,7 +283,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">dart_azampay</a></li>
-    <li><a href="../dart_azampay/dart_azampay-library.html">dart_azampay</a></li>
+    <li><a href="../dart_azampay/">dart_azampay</a></li>
     <li class="self-crumb">AzamPayClient class</li>
 </ol>
 
@@ -299,7 +296,7 @@
 <footer>
   <span class="no-break">
     dart_azampay
-      0.0.4
+      0.0.5
   </span>
   
 </footer>

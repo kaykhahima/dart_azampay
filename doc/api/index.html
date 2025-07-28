@@ -30,24 +30,21 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
   <h1 id="azampay-dart-package">AzamPay Dart Package</h1>
-<p><img src="https://img.shields.io/pub/v/dart_azampay?style=flat&amp;color=blue" alt="pub package"> <img src="https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml" alt="GitHub Actions Workflow Status"></p>
+<p><img src="https://img.shields.io/pub/v/dart_azampay?style=flat&amp;color=blue" alt="pub package"> <img src="https://img.shields.io/pub/dm/dart_azampay?label=downloads" alt="Pub Monthly Downloads"> <img src="https://img.shields.io/github/actions/workflow/status/kaykhahima/dart_azampay/dart.yml" alt="GitHub Actions Workflow Status"></p>
 <p align="left">
 <img src="https://github.com/kaykhahima/dart_azampay/raw/main/doc/images/azampay-strata.png" height="180" title="Azampay Strata Logo" alt="Azampay Strata Logo">
 </p>
@@ -142,21 +139,21 @@ print('Payment link: ${res.data}'); // Prints the payment link
           <h2>Libraries</h2>
         <dl>
           <dt id="dart_azampay">
-  <span class="name"><a href="dart_azampay/dart_azampay-library.html">dart_azampay</a></span> 
+  <span class="name"><a href="dart_azampay/">dart_azampay</a></span> 
 
 </dt>
 <dd>
 </dd>
 
           <dt id="enums">
-  <span class="name"><a href="enums/enums-library.html">enums</a></span> 
+  <span class="name"><a href="enums/">enums</a></span> 
 
 </dt>
 <dd>
 </dd>
 
           <dt id="models">
-  <span class="name"><a href="models/models-library.html">models</a></span> 
+  <span class="name"><a href="models/">models</a></span> 
 
 </dt>
 <dd>
@@ -179,9 +176,9 @@ print('Payment link: ${res.data}'); // Prints the payment link
     <h5 class="hidden-xs"><span class="package-name">dart_azampay</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
-      <li><a href="dart_azampay/dart_azampay-library.html">dart_azampay</a></li>
-      <li><a href="enums/enums-library.html">enums</a></li>
-      <li><a href="models/models-library.html">models</a></li>
+      <li><a href="dart_azampay/">dart_azampay</a></li>
+      <li><a href="enums/">enums</a></li>
+      <li><a href="models/">models</a></li>
 </ol>
 
   </div>
@@ -191,7 +188,7 @@ print('Payment link: ${res.data}'); // Prints the payment link
 <footer>
   <span class="no-break">
     dart_azampay
-      0.0.4
+      0.0.5
   </span>
   
 </footer>
