@@ -121,6 +121,6 @@ This project is licensed under the BSD 3-Clause License. See the [LICENSE](LICEN
 
 ## Support
 I hope you find this package useful for your projects. If you'd like to show your support, there are a few simple ways you can help:
-- Consider a small donation via [nisapoti.com/kaykhahima](nisapoti.com/kaykhahima)
+- Consider a small donation via [nisapoti.com/kaykhahima](https://nisapoti.com/kaykhahima)
 - Give the repository [a ⭐️ star on GitHub](https://github.com/kaykhahima/dart_azampay). This is a free and simple way to show your endorsement.
-- Leave a 👍 like on pub.dev if you're enjoying the package.
+- Leave [a 👍 like on pub.dev](https://pub.dev/packages/dart_azampay) if you're enjoying the package.
