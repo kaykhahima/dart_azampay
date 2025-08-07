@@ -111,12 +111,6 @@ print('Payment link: ${res.data}'); // Prints the payment link
 - [flexcodelabs/azampay](https://github.com/flexcodelabs/azampay): NodeJs SDK to help you easily and seamlessly integrate with Azampay APIs
 - [alphaolomi/laravel-azampay](https://github.com/alphaolomi/laravel-azampay): Laravel package providing fluent interface to Azampay's payment services
 
-> I hope you find this package useful for your projects. If you'd like to show your support, there are a few simple ways you can help:
-> - Consider a small donation via [nisapoti.com/kaykhahima](nisapoti.com/kaykhahima)
-> - Give the repository [a ⭐️ star on GitHub](https://github.com/kaykhahima/dart_azampay). This is a free and simple way to show your endorsement.
-> - Leave a 👍 like on pub.dev if you're enjoying the package.
-
-
 ## Contributing
 
 Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request.
@@ -124,3 +118,9 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 ## License
 
 This project is licensed under the BSD 3-Clause License. See the [LICENSE](LICENSE) file for details.
+
+## Support
+I hope you find this package useful for your projects. If you'd like to show your support, there are a few simple ways you can help:
+- Consider a small donation via [nisapoti.com/kaykhahima](nisapoti.com/kaykhahima)
+- Give the repository [a ⭐️ star on GitHub](https://github.com/kaykhahima/dart_azampay). This is a free and simple way to show your endorsement.
+- Leave a 👍 like on pub.dev if you're enjoying the package.
