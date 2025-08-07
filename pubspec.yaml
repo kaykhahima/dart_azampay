@@ -1,6 +1,6 @@
 name: dart_azampay
 description: A simple and efficient way to integrate AzamPay payment gateway into your Dart/Flutter applications.
-version: 0.0.6
+version: 0.0.7
 repository: https://github.com/kaykhahima/dart_azampay
 
 environment:
