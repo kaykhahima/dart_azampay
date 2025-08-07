@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.6 07 Aug 2025
+- chore: update README.md
+
 ## 0.0.5 28 Jul 2025
 - chore: update dependencies
 
